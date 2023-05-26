@@ -1,0 +1,18 @@
+# ----------------------------- Constantes ------------------------------
+DIRECTORIO_DE_TRABAJO="$HOME/.dotfiles/zsh"
+
+# Insertar archivos si existen
+function zsh_insertar_archivo() {
+    [ -f "$DIRECTORIO_DE_TRABAJO/$1" ] && source "$DIRECTORIO_DE_TRABAJO/$1"
+}
+
+function insertar_plugin() {
+  nombre_del_plugin=$(echo $1 | cut -d "/" -f 2)
+    if [ -d "$DIRECTORIO_DE_TRABAJO/plugins/$nombre_del_plugin" ]; then # Existe
+        zsh_insertar_archivo "plugins/$nombre_del_plugin/$nombre_del_plugin.plugin.zsh" || \
+        zsh_insertar_archivo "plugins/$nombre_del_plugin/$nombre_del_plugin.zsh"
+    else # No existe
+        git clone "https://github.com/$1.git" "$DIRECTORIO_DE_TRABAJO/plugins/$nombre_del_plugin"
+    fi
+}
+
