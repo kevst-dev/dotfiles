@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # / ---- zoxide ---- /
 export ZOXIDE_HOME="$HOME/.local/opt/zoxide"
 export PATH="$PATH:$ZOXIDE_HOME/bin"

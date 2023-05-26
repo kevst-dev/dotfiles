@@ -1,26 +1,27 @@
+#!/bin/bash
+
 # --------------------------- Funciones-zsh ----------------------------
-source "$HOME/.dotfiles/zsh/zsh-funciones"
+source "$HOME/.dotfiles/zsh/tools.sh"
 
 # --------------------------- General ----------------------------
-source "$HOME/.dotfiles/zsh/zsh-general-config"
+source "$HOME/.dotfiles/zsh/settings.sh"
 
 # --------------------------- skim(fuzzy_finder) ----------------------------
 source "$HOME/.dotfiles/zsh/fuzzy_finder.sh"
 
 # --------------------------- Prompt ----------------------------
 eval "$(starship init zsh)"
-# source "$HOME/dotfiles/zsh-config/zsh-prompt.sh"
 
 # --------------------------- Alias ----------------------------
-source "$HOME/.dotfiles/zsh/zsh-aliases"
+source "$HOME/.dotfiles/zsh/zsh-aliases.sh"
 
 # --------------------------- Autopair ----------------------------
-insertar_plugin "hlissner/zsh-autopair"
+insert_plugin "hlissner/zsh-autopair"
 
 # --------------------------- Completion ----------------------------
-insertar_plugin "marlonrichert/zsh-autocomplete"
+insert_plugin "marlonrichert/zsh-autocomplete"
 
 # ------------------------- Resaltado de sintaxis --------------------------
-insertar_plugin "zsh-users/zsh-syntax-highlighting"
+insert_plugin "zsh-users/zsh-syntax-highlighting"
 
 neofetch

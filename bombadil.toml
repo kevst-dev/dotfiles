@@ -18,4 +18,4 @@ dotfiles_dir = ".dotfiles"
 # relativos al directorio $HOME o absolutos.
 
 nvim = { source = "nvim", target = ".config/nvim" }
-zsh = { source = "zsh/.zshrc", target = ".zshrc" }
+zsh = { source = "zsh/zshrc.sh", target = ".zshrc" }
