@@ -17,5 +17,5 @@ dotfiles_dir = ".dotfiles"
 # `source` es relativa a `dotfiles_dir` y `target` serán
 # relativos al directorio $HOME o absolutos.
 
-# nvim = { source = "nvim", target = ".config/nvim" }
+nvim = { source = "nvim", target = ".config/nvim" }
 zsh = { source = "zsh/.zshrc", target = ".zshrc" }
