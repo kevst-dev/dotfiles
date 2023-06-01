@@ -1,6 +1,11 @@
-#!/bin/bash
+#!/bin/zsh
+
+##
+# Commands, funtions and aliases
+#
 
 # / ---- zoxide ---- /
+
 export ZOXIDE_HOME="$HOME/.local/opt/zoxide"
 export PATH="$PATH:$ZOXIDE_HOME/bin"
 eval "$(zoxide init zsh)"
@@ -8,20 +13,25 @@ eval "$(zoxide init zsh)"
 alias cd='z'
 
 # / ---- exa ---- /
+
 alias l='exa -l'
 alias la='exa -la '
 alias t='exa --tree --git-ignore'
 
 # / ---- code editor ---- /
+
 alias v='nvim'
 
 # / ---- bat ---- /
+
 alias cat='bat'
 
 # / ---- joshuto ---- /
+
 alias f='joshuto'
 
 # / ---- git ---- /
+
 alias g='git'
 alias gst='git status'
 alias gc='git commit'
@@ -46,3 +56,5 @@ alias gb='git branch'
 alias gm='git merge'
 alias gf='git fetch'
 
+# / ---- tools ---- /
+alias clear-node='find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;'
