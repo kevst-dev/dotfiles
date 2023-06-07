@@ -25,7 +25,9 @@ return {
           "rust",
           "python",
           "bash",
-          "sql"
+          "sql",
+
+          -- "powershell"
         },
         sync_install = false,
         highlight = {
@@ -60,6 +62,7 @@ return {
           -- termcolors = {} -- table of colour name strings
         }
       })
+
     end
   },
   {
@@ -69,5 +72,8 @@ return {
         show_end_of_line = true,
       }
     end
+  },
+  {
+    "vmchale/just-vim"
   },
 }
