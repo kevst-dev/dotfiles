@@ -20,3 +20,17 @@ source "/usr/share/skim/completion.zsh"
 
 # < CTRL-k >: Moverse hacia arriba
 # < CTRL-j >: Moverse hacia abajo
+
+# ---- omitir archivos git ----
+
+SKIM_DEFAULT_COMMAND="fd --type f || git ls-tree -r --name-only HEAD || rg --files || find ."
+
+# ---- Script directorios frecuentes ----
+
+dirs_options() {
+  source $HOME/.dotfiles/zsh/tools/sk_scripts/dirs.sh
+}
+
+# Asignar el atajo de teclado Ctrl+E para ejecutar dirs_options
+zle -N dirs_options
+bindkey '^E' dirs_options
