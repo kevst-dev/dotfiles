@@ -1,8 +1,10 @@
 # Esta es la configuracion de skim
 
-# Importando los scripts oficiales de skim
-source "/usr/share/skim/key-bindings.zsh"
-source "/usr/share/skim/completion.zsh"
+# Importando los scripts oficiales de fzf
+# NOTA: Esto depende de la distro Linux
+
+source "/usr/share/fzf/key-bindings.zsh"
+source "/usr/share/fzf/completion.zsh"
 
 # ---- Teclas de acceso  ----
 
@@ -15,6 +17,10 @@ source "/usr/share/skim/completion.zsh"
 
 # < CTRL-r >: Encontrar a través de su historial de shell,
 # y desate la selección a STDOUT
+export FZF_CTRL_R_OPTS="
+  --height 40% \
+  --reverse \
+"
 
 # ---- Teclas de desplazamiento ----
 
@@ -23,7 +29,7 @@ source "/usr/share/skim/completion.zsh"
 
 # ---- omitir archivos git ----
 
-SKIM_DEFAULT_COMMAND="fd --type f || git ls-tree -r --name-only HEAD || rg --files || find ."
+# SKIM_DEFAULT_COMMAND="fd --type f || git ls-tree -r --name-only HEAD || rg --files || find ."
 
 # ---- Script directorios frecuentes ----
 
@@ -32,5 +38,5 @@ dirs_options() {
 }
 
 # Asignar el atajo de teclado Ctrl+E para ejecutar dirs_options
-zle -N dirs_options
-bindkey '^E' dirs_options
+ zle -N dirs_options
+ bindkey '^E' dirs_options

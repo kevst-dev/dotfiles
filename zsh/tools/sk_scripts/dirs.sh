@@ -17,16 +17,17 @@ get_format_keys() {
   echo "$key_dirs"
 }
 
-generate_skim_menu() {
+generate_menu() {
   local options_data=$1
-  selected_option=$(echo "$options_data" | sk)
+
+  selected_option=$(echo "$options_data" | fzf)
 
   echo ${dirs[$selected_option]}
 }
 
 main() {
   local keys=$(get_format_keys)
-  local selected=$(generate_skim_menu "$keys")
+  local selected=$(generate_menu "$keys")
 
   cd "$selected"
 }
