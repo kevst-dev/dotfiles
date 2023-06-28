@@ -8,7 +8,7 @@
 local -a plugins=(
   marlonrichert/zsh-autocomplete      # Completado en tiempo real
   softmoth/zsh-vim-mode               # Vim atajos de teclado
-  marlonrichert/zcolors               # Colores para completados y Git
+  # marlonrichert/zcolors               # Colores para completados y Git
   zsh-users/zsh-autosuggestions       # Sugerencias en línea
   zsh-users/zsh-syntax-highlighting   # Resaltado de sintaxis en la línea de comandos
 )
