@@ -38,7 +38,7 @@ export FZF_CTRL_R_OPTS="
 
 dirs_options() {
   # shellcheck disable=SC1091
-  source "$HOME/.dotfiles/zsh/tools/fzf_scripts/dirs.sh"
+  source "$ZSH_CONFIG_PATH/src/fzf_scripts/dirs.sh"
 }
 
 # Asignar el atajo de teclado Ctrl+E para ejecutar dirs_options
