@@ -5,4 +5,5 @@ default:
 # Comprobar calidad del codigo
 check:
   prettier --check --write .
-  shellcheck -x --shell=bash tools/*.sh tools/fzf_scripts/* zshrc.sh
+  shellcheck -x --shell=bash  zshrc.sh
+  find src/ -type f -name "*.sh" -exec shellcheck -x --shell=bash {} +
