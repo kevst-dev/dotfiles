@@ -3,7 +3,10 @@
 # Importando los scripts oficiales de fzf
 # NOTA: Esto depende de la distro Linux
 
+# shellcheck disable=SC1094
 source "/usr/share/fzf/key-bindings.zsh"
+
+# shellcheck disable=SC1094
 source "/usr/share/fzf/completion.zsh"
 
 # ---- Teclas de acceso  ----
@@ -34,7 +37,8 @@ export FZF_CTRL_R_OPTS="
 # ---- Script directorios frecuentes ----
 
 dirs_options() {
-  source $HOME/.dotfiles/zsh/tools/sk_scripts/dirs.sh
+  # shellcheck disable=SC1091
+  source "$HOME/.dotfiles/zsh/tools/fzf_scripts/dirs.sh"
 }
 
 # Asignar el atajo de teclado Ctrl+E para ejecutar dirs_options

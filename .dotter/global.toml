@@ -1,0 +1,12 @@
+# Un paquete contiene dos secciones: "archivos" y "variables".
+# Ambas secciones son opcionales; solo puedes tener una si lo deseas.
+#
+# La sección 'archivos' es una asignación entre la ruta del archivo relativa a
+# la raíz del repositorio y su ubicación en el sistema de archivos.
+
+# En este caso, digamos que su repositorio está en `~/.dotfiles`, se asignará
+# `~/.dotfiles/zshrc` a `~/.zshrc`.
+#
+# En Windows, '~' se expande a 'C:\Users\<NOMBRE DE USUARIO>\'.
+[zsh.files]
+"zsh/zshrc.sh" = { target = "~/.zshrc", type = "symbolic" }

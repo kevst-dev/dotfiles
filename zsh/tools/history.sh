@@ -14,7 +14,7 @@ HISTFILE=$HOME/.dotfiles/zsh/zhistory
 SAVEHIST=$(( 100 * 1000 ))      # Utilizamos la multiplicación para mayor legibilidad.
 
 # Número máximo de entradas de historial a mantener en memoria.
-HISTSIZE=$(( 1.2 * SAVEHIST ))  # Valor recomendado por Zsh
+HISTSIZE=$(awk "BEGIN { print int(1.2 * $SAVEHIST) }")
 
 # Utilizar mecanismos modernos de bloqueo de archivos, para mayor seguridad y rendimiento.
 setopt HIST_FCNTL_LOCK

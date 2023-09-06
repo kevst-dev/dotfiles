@@ -4,33 +4,34 @@
 # Plugins
 #
 
-# -a establece el tipo de variable como un arreglo.
-local -a plugins=(
-  marlonrichert/zsh-autocomplete      # Completado en tiempo real
-  softmoth/zsh-vim-mode               # Vim atajos de teclado
-  # marlonrichert/zcolors               # Colores para completados y Git
-  zsh-users/zsh-autosuggestions       # Sugerencias en línea
-  zsh-users/zsh-syntax-highlighting   # Resaltado de sintaxis en la línea de comandos
-)
+zplug "marlonrichert/zsh-autocomplete" # Completado en tiempo real
+zplug "zsh-users/zsh-autosuggestions"       # Sugerencias en línea
+zplug "zsh-users/zsh-syntax-highlighting"   # Resaltado de sintaxis en la línea de comandos
+zplug "softmoth/zsh-vim-mode"               # Vim atajos de teclado
 
-# El plugin Zsh Autocomplete envía *muchos* caracteres a tu terminal.
-# Esto no es un problema en máquinas modernas localmente, pero si estás trabajando a través de una conexión SSH lenta,
-# es posible que desees agregar un pequeño retraso antes de que se active el autocompletado:
-#   zstyle ':autocomplete:*' min-delay 0.5  # segundos
-#
-# Si tu conexión es MUY lenta, es posible que desees desactivar el autocompletado por completo y utilizar solo el completado mediante la tecla TAB:
-#   zstyle ':autocomplete:*' async no
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -r; then
+    echo; zplug install
+  fi
+fi
 
-# Acelera el inicio clonando todos los plugins en paralelo.
-# Esto no clonará los plugins que ya tengamos.
-znap clone $plugins
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
 
-# Carga cada plugin, uno a la vez.
-local p=
-for p in $plugins; do
-  znap source $p
-done
+# Vim config
 
-# `znap eval <nombre> '<comando>'` es similar a `eval "$( <comando> )"` pero con
-# caché y compilación de la salida del <comando>, lo que lo hace ~10 veces más rápido.
-znap eval zcolors zcolors   # Código de inicialización adicional necesario para zcolors.
+# shellcheck disable=SC2034
+MODE_CURSOR_VIINS="blinking bar white" # insert mode
+# shellcheck disable=SC2034
+MODE_CURSOR_VICMD="orange block" # normal mode
+# shellcheck disable=SC2034
+MODE_CURSOR_REPLACE="#ffffff underline" # replace mode
+
+# shellcheck disable=SC2034
+MODE_CURSOR_SEARCH="#00ff00 steady underline"
+# shellcheck disable=SC2034
+MODE_CURSOR_VISUAL="gray steady bar" # visual mode
+# shellcheck disable=SC2034
+MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL green"

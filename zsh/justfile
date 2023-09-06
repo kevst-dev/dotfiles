@@ -1,0 +1,8 @@
+# Muestra la lista de comandos disponibles
+default:
+    @just --list
+
+# Comprobar calidad del codigo
+check:
+  prettier --check --write .
+  shellcheck -x --shell=bash tools/*.sh tools/fzf_scripts/* zshrc.sh

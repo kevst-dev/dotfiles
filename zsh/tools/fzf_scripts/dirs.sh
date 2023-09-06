@@ -10,7 +10,8 @@ declare -A dirs=(
 get_format_keys() {
   local key_dirs
 
-  for key in "${(k)dirs[@]}"; do
+  # shellcheck disable=SC2296
+  for key in ${(@k)dirs}; do
     key_dirs+="$key\n"
   done
 
@@ -22,13 +23,16 @@ generate_menu() {
 
   selected_option=$(echo "$options_data" | fzf)
 
-  echo ${dirs[$selected_option]}
+  echo "${dirs[$selected_option]}"
 }
 
 main() {
-  local keys=$(get_format_keys)
-  local selected=$(generate_menu "$keys")
+  local keys
+  local selected
 
-  cd "$selected"
+  keys=$(get_format_keys)
+  selected=$(generate_menu "$keys")
+
+  cd "$selected" || exit
 }
 main
