@@ -1,6 +1,0 @@
-includes = []
-packages = ["zsh"]
-
-[files]
-
-[variables]

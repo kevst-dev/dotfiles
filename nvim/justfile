@@ -1,0 +1,8 @@
+# Muestra la lista de comandos disponibles
+default:
+    @just --list
+
+# Comprobar calidad del codigo
+check:
+  stylua .
+  luacheck .

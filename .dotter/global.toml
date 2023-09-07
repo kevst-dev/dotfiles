@@ -8,5 +8,9 @@
 # `~/.dotfiles/zshrc` a `~/.zshrc`.
 #
 # En Windows, '~' se expande a 'C:\Users\<NOMBRE DE USUARIO>\'.
+
 [zsh.files]
 "zsh/zshrc.sh" = { target = "~/.zshrc", type = "symbolic" }
+
+[nvim.files]
+nvim = { target = "~/.config/nvim", type = "symbolic" }
