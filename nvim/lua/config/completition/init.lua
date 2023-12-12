@@ -95,7 +95,7 @@ cmp.setup {
   },
 }
 
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype("gitcommit", {

@@ -78,7 +78,7 @@ return {
   end,
   ["omnisharp"] = function()
     return {
-      cmd = {"OmniSharp"},
+      cmd = { "OmniSharp" },
       on_attach = lsp_attach,
       flags = lsp_flags,
     }

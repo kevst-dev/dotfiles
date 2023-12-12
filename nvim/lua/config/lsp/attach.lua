@@ -1,5 +1,5 @@
 return function(client, bufnr)
-  local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+  local _ = vim.api.nvim_buf_get_option(0, "filetype")
   -- keymaps for lsp
   vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0, desc = "LSP Help information of symbol under the cursor" })
   vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, { buffer = 0, desc = "LSP Rename symbol under cursor" })
@@ -20,5 +20,4 @@ return function(client, bufnr)
   if client.server_capabilities.inlayHintProvider then
     vim.lsp.inlay_hint(bufnr, true)
   end
-
 end

@@ -1,4 +1,7 @@
 [symlinks]
+"nvim/.dotter/cache.toml" = "/home/kevst/.config/nvim/.dotter/cache.toml"
+"nvim/.dotter/global.toml" = "/home/kevst/.config/nvim/.dotter/global.toml"
+"nvim/.dotter/local.toml" = "/home/kevst/.config/nvim/.dotter/local.toml"
 "nvim/.editorconfig" = "/home/kevst/.config/nvim/.editorconfig"
 "nvim/.luacheckrc" = "/home/kevst/.config/nvim/.luacheckrc"
 "nvim/.luarc.json" = "/home/kevst/.config/nvim/.luarc.json"
@@ -17,6 +20,7 @@
 "nvim/lua/config/lsp/setups.lua" = "/home/kevst/.config/nvim/lua/config/lsp/setups.lua"
 "nvim/lua/config/options.lua" = "/home/kevst/.config/nvim/lua/config/options.lua"
 "nvim/lua/plugins/autopairs.lua" = "/home/kevst/.config/nvim/lua/plugins/autopairs.lua"
+"nvim/lua/plugins/codeium.lua" = "/home/kevst/.config/nvim/lua/plugins/codeium.lua"
 "nvim/lua/plugins/colorscheme.lua" = "/home/kevst/.config/nvim/lua/plugins/colorscheme.lua"
 "nvim/lua/plugins/completition.lua" = "/home/kevst/.config/nvim/lua/plugins/completition.lua"
 "nvim/lua/plugins/dashboard/init.lua" = "/home/kevst/.config/nvim/lua/plugins/dashboard/init.lua"
@@ -27,6 +31,7 @@
 "nvim/lua/plugins/lualine.lua" = "/home/kevst/.config/nvim/lua/plugins/lualine.lua"
 "nvim/lua/plugins/neo-tree.lua" = "/home/kevst/.config/nvim/lua/plugins/neo-tree.lua"
 "nvim/lua/plugins/notifications.lua" = "/home/kevst/.config/nvim/lua/plugins/notifications.lua"
+"nvim/lua/plugins/oil.lua" = "/home/kevst/.config/nvim/lua/plugins/oil.lua"
 "nvim/lua/plugins/syntax.lua" = "/home/kevst/.config/nvim/lua/plugins/syntax.lua"
 "nvim/lua/plugins/telescope.lua" = "/home/kevst/.config/nvim/lua/plugins/telescope.lua"
 "nvim/lua/plugins/treesitter.lua" = "/home/kevst/.config/nvim/lua/plugins/treesitter.lua"
