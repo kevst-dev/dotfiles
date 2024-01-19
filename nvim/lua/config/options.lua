@@ -39,3 +39,16 @@ options.laststatus = 3
 options.cmdheight = 1
 options.updatetime = 50
 options.signcolumn = "yes"
+
+vim.g.clipboard = {
+  name = "win32yank-wsl",
+  copy = {
+    ["+"] = "win32yank.exe -i --crlf",
+    ["*"] = "win32yank.exe -i --crlf"
+  },
+  paste = {
+    ["+"] = "win32yank.exe -o --crlf",
+    ["*"] = "win32yank.exe -o --crlf"
+  },
+  cache_enable = 0,
+}
