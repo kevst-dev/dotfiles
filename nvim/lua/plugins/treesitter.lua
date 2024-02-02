@@ -33,6 +33,7 @@ return {
         "vim",
         "yaml",
         "just",
+        "astro",
       },
       highlight = {
         enable = true,
