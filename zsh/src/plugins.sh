@@ -4,50 +4,31 @@
 # Plugin manager
 #
 
-download_zplug() {
-  local zplug_folder=$1
-
-  # Descarga automáticamente Znap si aún no lo está.
-  if ! [[ -r "$zplug_folder" ]]; then
-    git clone "https://github.com/zplug/zplug" "$zplug_folder"
+download_zimfw() {
+  if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
   fi
-}
-
-define_plugins() {
-  zplug "marlonrichert/zsh-autocomplete"      # Completado en tiempo real
-  zplug "zsh-users/zsh-autosuggestions"       # Sugerencias en línea
-  zplug "zsh-users/zsh-syntax-highlighting"
-  zplug "softmoth/zsh-vim-mode"               # Vim atajos de teclado
 }
 
 install_plugins() {
-  # Install plugins if there are plugins that have not been installed
-  if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -r; then
-      echo; zplug install
-    fi
+  # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+  if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+    source ${ZIM_HOME}/zimfw.zsh init -q
   fi
-
-  zplug load --verbose
 }
 
 load_plugin_manager() {
-  local zplug_folder
-  local zplug
+  export ZIM_HOME="$ZSH_CONFIG_PATH/plugins/.zim"
+  export ZIM_CONFIG_FILE="$ZSH_CONFIG_PATH/src/zimrc.sh"
 
-  zplug_folder="$ZSH_CONFIG_PATH"/plugins/zplug
-  zplug="$zplug_folder"/init.zsh
-
-  download_zplug "$zplug_folder"
-
-  echo "$zplug"
+  download_zimfw
 }
 
 # shellcheck disable=SC1090
-source "$(load_plugin_manager)"   # Load zplug
-
-define_plugins
+load_plugin_manager
 install_plugins
+
+# define_plugins
 
 source "$ZSH_CONFIG_PATH"/src/plugins_config/init.sh
