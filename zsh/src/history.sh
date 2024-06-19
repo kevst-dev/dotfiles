@@ -1,26 +1,23 @@
 #!/bin/zsh
 
-##
-# Configuración del historial
+###################################
+### Configuración del historial ###
+###################################
 
-# Habilitar operadores de globs adicionales. (Globbing = coincidencia de patrones)
-# https://zsh.sourceforge.io/Doc/Release/Expansion.html#Filename-Generation
-setopt EXTENDED_GLOB
+# Define dónde almacenar el historial.
+export HISTFILE=$ZSH_CONFIG_PATH/.zsh_history
 
-# Indica a Zsh dónde almacenar el historial.
-HISTFILE=$HOME/.dotfiles/zsh/zhistory
+# Cuántos comandos se guardarab en el archivo
+export SAVEHIST=$(( 100 * 1000 ))
 
-# Número máximo de entradas a mantener en el archivo del historial.
-SAVEHIST=$(( 100 * 1000 ))      # Utilizamos la multiplicación para mayor legibilidad.
+# Cuántos comandos cargará zsh en la memoria.
+export HISTSIZE=$(awk "BEGIN { print int(1.2 * $SAVEHIST) }")
 
-# Número máximo de entradas de historial a mantener en memoria.
-HISTSIZE=$(awk "BEGIN { print int(1.2 * $SAVEHIST) }")
-
-# Utilizar mecanismos modernos de bloqueo de archivos, para mayor seguridad y rendimiento.
-setopt HIST_FCNTL_LOCK
-
-# Mantener solo la copia más reciente de cada entrada duplicada en el historial.
+# El historial no guardará duplicados.
 setopt HIST_IGNORE_ALL_DUPS
+
+# El historial no mostrará duplicados en la búsqueda.
+setopt HIST_FIND_NO_DUPS
 
 # Sincronizar automáticamente el historial entre sesiones concurrentes.
 setopt SHARE_HISTORY
