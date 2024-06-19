@@ -1,14 +1,16 @@
 #!/bin/zsh
 
-##
-# Prompt theme
-#
+source "$ZSH_CONFIG_PATH/src/utils/check_app.sh"
 
-if command -v starship >/dev/null; then
-  # Starship está instalada
+########################
+### Cargar el prompt ###
+########################
+
+load_prompt() {
+  local name_app="starshipa"
+
+  check_application "$name_app"
   eval "$(starship init zsh)"
-else
-  # Starship no está instalada
-  echo "La aplicación Starship no está instalada."
-  echo "Por favor, instálala para cargar el prompt adecuado."
-fi
+}
+
+load_prompt
