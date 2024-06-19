@@ -3,8 +3,6 @@
 main() {
 
   export PATH="$HOME/.local/bin:$PATH"
-
-  # Definiendo el directorio de configuración
   export ZSH_CONFIG_PATH="$HOME"/.dotfiles/zsh
 
   source "$ZSH_CONFIG_PATH/src/history.sh"
@@ -13,7 +11,7 @@ main() {
 
   source "$ZSH_CONFIG_PATH/src/plugins/init.sh"
 
-  # neofetch
+  # fastfetch
 }
 
 main "$@"
