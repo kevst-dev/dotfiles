@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+source "$ZSH_CONFIG_PATH/src/utils/check_app.sh"
+
 ######################################
 ### alias agrupados por aplicacion ###
 ######################################
@@ -8,11 +10,15 @@
 
 export ZOXIDE_HOME="$HOME/.local/opt/zoxide"
 export PATH="$PATH:$ZOXIDE_HOME/bin"
+
+check_application "zoxide"
 eval "$(zoxide init zsh)"
 
 alias cd='z'
 
 # ---- exa ----
+
+check_application "exa"
 
 alias l='exa -l'
 alias la='exa -la '
@@ -20,13 +26,19 @@ alias t='exa --tree --git-ignore'
 
 # ---- neovim ----
 
+check_application "nvim"
+
 alias v='nvim'
 
 # ---- bat ----
 
+check_application "bat"
+
 alias cat='bat'
 
 # ---- git ----
+
+check_application "git"
 
 alias g='git'
 alias gst='git status'

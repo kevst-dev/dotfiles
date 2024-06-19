@@ -7,7 +7,7 @@ source "$ZSH_CONFIG_PATH/src/utils/check_app.sh"
 ########################
 
 load_prompt() {
-  local name_app="starshipa"
+  local name_app="starship"
 
   check_application "$name_app"
   eval "$(starship init zsh)"
