@@ -10,6 +10,7 @@ main() {
   source "$ZSH_CONFIG_PATH/src/prompt.sh"
 
   source "$ZSH_CONFIG_PATH/src/plugins/init.sh"
+  source "$ZSH_CONFIG_PATH/src/fuzzy_finder/init.sh"
 
   # fastfetch
 }

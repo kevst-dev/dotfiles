@@ -31,7 +31,6 @@
 "nvim/lua/plugins/syntax.lua" = "/home/kevst-dev/.config/nvim/lua/plugins/syntax.lua"
 "nvim/lua/plugins/telescope.lua" = "/home/kevst-dev/.config/nvim/lua/plugins/telescope.lua"
 "nvim/lua/plugins/treesitter.lua" = "/home/kevst-dev/.config/nvim/lua/plugins/treesitter.lua"
-"nvim/lua/plugins/which-key.lua" = "/home/kevst-dev/.config/nvim/lua/plugins/which-key.lua"
 "zsh/zshrc.sh" = "/home/kevst-dev/.zshrc"
 
 [templates]
