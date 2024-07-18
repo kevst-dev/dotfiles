@@ -40,6 +40,15 @@ options.cmdheight = 1
 options.updatetime = 50
 options.signcolumn = "yes"
 
+-- Habilitar el ajuste de líneas largas
+options.wrap = true
+
+-- Mostrar la línea larga en varias líneas
+options.linebreak = true
+
+options.textwidth = 80
+options.colorcolumn = "80"
+
 vim.g.clipboard = {
   name = "win32yank-wsl",
   copy = {
