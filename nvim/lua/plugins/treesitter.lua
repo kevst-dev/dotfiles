@@ -34,6 +34,7 @@ return {
         "yaml",
         "just",
         "astro",
+        "todotxt",
       },
       highlight = {
         enable = true,

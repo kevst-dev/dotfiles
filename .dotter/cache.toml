@@ -25,6 +25,7 @@
 "nvim/lua/plugins/init.lua" = "/home/kevst-dev/.config/nvim/lua/plugins/init.lua"
 "nvim/lua/plugins/lsp.lua" = "/home/kevst-dev/.config/nvim/lua/plugins/lsp.lua"
 "nvim/lua/plugins/lualine.lua" = "/home/kevst-dev/.config/nvim/lua/plugins/lualine.lua"
+"nvim/lua/plugins/markdown.lua" = "/home/kevst-dev/.config/nvim/lua/plugins/markdown.lua"
 "nvim/lua/plugins/neo-tree.lua" = "/home/kevst-dev/.config/nvim/lua/plugins/neo-tree.lua"
 "nvim/lua/plugins/notifications.lua" = "/home/kevst-dev/.config/nvim/lua/plugins/notifications.lua"
 "nvim/lua/plugins/oil.lua" = "/home/kevst-dev/.config/nvim/lua/plugins/oil.lua"
