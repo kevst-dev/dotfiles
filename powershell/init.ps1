@@ -12,29 +12,66 @@ function v{nvim @args}
 
 # ---- git ----
 
-function g{git @args}
-function gst{git status}
-function gc{git commit @args}
-function ga{git add @args}
-function gpl{git pull @args}
-function gpom{git pull origin master}
-function gpu{git push @args}
-function gpuom{git push origin master}
-function gd{git diff @args}
-function gch{git checkout @args}
-function gnb{git checkout -b @args}
-function gac{git add . && git commit @args}
-function grs{git restore --staged .}
-function gre{git restore @args}
-function gr{git remote @args}
-function gcl{git clone @args}
-function glm{git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all @args}
-function glg{git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all -5}
-function grm{git remote @args}
-function gb{git branch @args}
-function gm{git merge @args}
-function gf{git fetch @args}
+function Get-GitCommand { & git $args }
+New-Alias -Name g -Value Get-GitCommand
 
-# ---- exa ----
+function Get-GitStatus { & git status }
+New-Alias -Name gst -Value Get-GitStatus
 
-New-Alias -Name l -Value "ls"
+Remove-Alias -Name gc -Force
+function Set-GitCommit { & git commit $args }
+New-Alias -Name gc -Value Set-GitCommit
+
+function Get-GitAdd{ & git add $args }
+New-Alias -Name ga -Value Get-GitAdd
+
+function Get-GitPull { & git pull $args }
+New-Alias -Name gpl -Value Get-GitPull
+
+function Set-GitPush { & git push $args }
+New-Alias -Name gpu -Value Set-GitPush
+
+function Get-GitDiff{ & git diff $args }
+New-Alias -Name gd -Value Get-GitDiff
+
+function Get-GitCheckout{ & git checkout $args }
+New-Alias -Name gch -Value Get-GitCheckout
+
+function Set-GitAddAndCommit { & git add . && git commit $args }
+New-Alias -Name gac -Value Set-GitAddAndCommit
+
+function Set-GitRestore { & git restore $args }
+New-Alias -Name gre -Value Set-GitRestore
+
+function Get-GitRemote { & git remote $args }
+New-Alias -Name gr -Value Get-GitRemote
+
+function Get-GitLog { 
+    git log `
+        --graph `
+        --abbrev-commit `
+        --decorate `
+        --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' `
+        --all $args 
+}
+New-Alias -Name glg -Value Get-GitLog
+
+function Get-GitRemote { & git remote $args }
+New-Alias -Name grm -Value Get-GitRemote
+
+function Get-GitBranch { & git branch $args }
+New-Alias -Name gb -Value Get-GitBranch
+
+function Get-GitMerge { & git merge $args }
+New-Alias -Name gm -Value Get-GitMerge
+
+# ---- eza ----
+
+function Get-Files { & eza -l $args }
+New-Alias -Name l -Value Get-Files
+
+function Get-Files-All { & eza -la $args }
+New-Alias -Name la -Value Get-Files-All
+
+function Show-Tree { & eza -T $args }
+New-Alias -Name t -Value Show-Tree

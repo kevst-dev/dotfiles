@@ -14,3 +14,6 @@
 
 [nvim.files]
 nvim = { target = "~/.config/nvim", type = "symbolic" }
+
+[powershell.files]
+"powershell/init.ps1" = "~/OneDrive/Documentos/PowerShell/Microsoft.PowerShell_profile.ps1"
