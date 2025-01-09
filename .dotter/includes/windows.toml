@@ -1,0 +1,6 @@
+[powershell.files]
+# "powershell/init.ps1" = "~/OneDrive/Documentos/PowerShell/Microsoft.PowerShell_profile.ps1"
+"powershell/init.ps1" = "~/OneDrive - Universidad de los andes/Documentos/PowerShell/Microsoft.PowerShell_profile.ps1"
+
+[nvim.files]
+nvim = "~/AppData/Local/nvim"

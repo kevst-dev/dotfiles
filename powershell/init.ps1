@@ -62,6 +62,7 @@ New-Alias -Name grm -Value Get-GitRemote
 function Get-GitBranch { & git branch $args }
 New-Alias -Name gb -Value Get-GitBranch
 
+Remove-Alias -Name gm -Force
 function Get-GitMerge { & git merge $args }
 New-Alias -Name gm -Value Get-GitMerge
 
@@ -75,3 +76,13 @@ New-Alias -Name la -Value Get-Files-All
 
 function Show-Tree { & eza -T $args }
 New-Alias -Name t -Value Show-Tree
+
+# ---- zoxide ----
+
+Remove-Alias -Name cd -Force
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
+New-Alias -Name cd -Value z
+
+# ---- neovim ----
+
+New-Alias -Name v -Value nvim
