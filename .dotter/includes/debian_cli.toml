@@ -1,0 +1,5 @@
+[nvim.files]
+nvim = "~/AppData/Local/nvim"
+
+[zsh.files]
+"zsh/zshrc.sh" = "~/.zshrc"

@@ -12,6 +12,17 @@ Para configurar Dotter en Windows, crea un archivo `.dotter/local.toml` en el di
 includes = [".dotter/includes/windows.toml"]
 packages = ["powershell", "nvim"]
 ```
+### Linux
+
+Para configurar Dotter en Linux, crea un archivo `.dotter/local.toml` en el directorio raíz del repositorio con una estructura como:
+
+```toml
+includes = [".dotter/includes/debian_cli.toml"]
+packages = ["zsh", "nvim"]
+```
+
+includes = [".dotter/includes/debian_cli.toml"]
+packages = ["zsh", "nvim"]
 
 ## Uso
 

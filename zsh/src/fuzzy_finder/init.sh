@@ -9,8 +9,10 @@ source "$ZSH_CONFIG_PATH/src/utils/check_app.sh"
 # Cargando los scripts oficiales de fzf
 # NOTA: Esto depende de la distro Linux
 
-source "/usr/share/fzf/key-bindings.zsh"
-source "/usr/share/fzf/completion.zsh"
+# source "/usr/share/fzf/key-bindings.zsh"
+source "/home/linuxbrew/.linuxbrew/opt/fzf/shell/key-bindings.zsh"
+#source "/usr/share/fzf/completion.zsh"
+source "/home/linuxbrew/.linuxbrew/opt/fzf/shell/completion.zsh"
 
 # ---- Teclas de acceso  ----
 
